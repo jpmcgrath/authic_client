@@ -1,3 +1,9 @@
 = AuthicClient
 
-This project rocks and uses MIT-LICENSE.
+add this gem to your Gemfile
+
+gem "authic_client"
+
+run bundle install
+
+rails g active_record:authic User
