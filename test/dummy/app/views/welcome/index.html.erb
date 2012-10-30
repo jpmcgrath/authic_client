@@ -1,0 +1,9 @@
+AUTH Client
+
+<% if current_user %>
+  <%= current_user.inspect %>
+  <%= link_to "sign out", signout_path %>
+<% else %>
+  <%= link_to "sign in", signin_path %>
+  <%= link_to "sign_up", signup_path %>
+<% end %>
