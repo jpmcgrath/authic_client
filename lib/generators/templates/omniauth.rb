@@ -1,6 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
 
   #TODO: Change to PROD url
-  provider :authic, $authic_client_key, $authic_client_secret, :subdomain => $authic_client_subdomain, :domain => "authicstaging.com"
+  provider :authic, AuthicClient::AUTHIC_CLIENT_KEY, AuthicClient::AUTHIC_CLIENT_SECRET, :subdomain => AuthicClient::AUTHIC_CLIENT_SUBDOMAIN, :domain => "authicstaging.com"
   
 end

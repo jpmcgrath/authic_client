@@ -2,7 +2,7 @@ module AuthicClient
   module ApplicationHelper
     
     def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      @current_user ||= User.find(session[:authic_user_id]) if session[:authic_user_id]
     end
 
     def signin_path
@@ -15,7 +15,7 @@ module AuthicClient
 
     def login_required
       unless current_user
-        session[:return_to_this_url] = request.full_path
+        session[:authic_return_to_this_url] = request.fullpath
         redirect_to signin_path
       end
     end
