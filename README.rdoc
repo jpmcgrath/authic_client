@@ -6,4 +6,6 @@ gem "authic_client"
 
 run bundle install
 
+rails g authic:install
+
 rails g active_record:authic User
