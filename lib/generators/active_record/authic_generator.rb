@@ -23,8 +23,6 @@ module ActiveRecord
 
       def inject_authic_content
         content = <<CONTENT
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :remember_me
   include AuthicUserMixin
 CONTENT
 
@@ -42,12 +40,7 @@ CONTENT
 
       def migration_data
 <<RUBY
-      t.string :email, :null => false, :default => ""
-      t.datetime :created_at, :null => false
-      t.datetime :updated_at, :null => false
-      t.string :provider
-      t.string :uid
-      t.string :authic_data   
+ 
 RUBY
       end
     end

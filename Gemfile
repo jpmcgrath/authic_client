@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "http://rubygems.org"
 
 # Declare your gem's dependencies in authic_client.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and

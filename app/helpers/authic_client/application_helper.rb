@@ -6,11 +6,11 @@ module AuthicClient
     end
 
     def signin_path
-      "/auth/authic?&state=sign_in"
+      "/auth/authic?&authic_action=signin"
     end
 
     def signup_path
-      "/auth/authic?&state=sign_up"
+      "/auth/authic?&authic_action=signup"
     end
 
     def login_required

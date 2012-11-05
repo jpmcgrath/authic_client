@@ -1,6 +1,6 @@
-class AddAuthicTo<%= table_name.camelize %> < ActiveRecord::Migration
+class AddAuthicToUsers < ActiveRecord::Migration
   def self.up
-    change_table(:<%= table_name %>) do |t|
+    change_table(:users) do |t|
       t.string :email, :null => false, :default => "" unless t.column_exists?(:email)
       t.string :provider unless t.column_exists?(:provider)
       t.string :uid  unless t.column_exists?(:uid)
@@ -10,9 +10,6 @@ class AddAuthicTo<%= table_name.camelize %> < ActiveRecord::Migration
       t.index :provider unless t.index_exists?(:provider)
       t.index :uid unless t.index_exists?(:uid)
 
-<% attributes.each do |attribute| -%>
-      t.<%= attribute.type %> :<%= attribute.name %>
-<% end -%>
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps
