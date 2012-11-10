@@ -1,6 +1,6 @@
-class AuthicCreate<%= table_name.camelize %> < ActiveRecord::Migration
+class AuthicCreateUsers < ActiveRecord::Migration
   def change
-    create_table(:<%= table_name %>) do |t|
+    create_table(:users) do |t|
       t.string :email, :null => false, :default => "" 
       t.string :provider 
       t.string :uid  
@@ -16,17 +16,14 @@ class AuthicCreate<%= table_name.camelize %> < ActiveRecord::Migration
       t.string :roles
       
 
-<% attributes.each do |attribute| -%>
-      t.<%= attribute.type %> :<%= attribute.name %>
-<% end -%>
 
       t.timestamps
     end
 
     
-    add_index :<%= table_name %>, :email, :unique => true 
-    add_index :<%= table_name %>, :provider 
-    add_index :<%= table_name %>, :uid
+    add_index :users, :email, :unique => true 
+    add_index :users, :provider 
+    add_index :users, :uid
 
   end
 end
