@@ -25,7 +25,7 @@ module AuthicUserMixin
       user.authic_data = (auth.extra.raw_info.to_json.to_s if auth.extra.raw_info)
       
       user.save
-      return user
+      return users
     end
   end
   
