@@ -13,6 +13,10 @@ module AuthicClient
       "/auth/authic?&authic_action=signup"
     end
 
+    def user_account_path
+      "#{AuthicClient::AUTHIC_CLIENT_FULL_URL}/edit_account"
+    end
+
     def login_required
       unless current_user
         session[:authic_return_to_this_url] = request.fullpath

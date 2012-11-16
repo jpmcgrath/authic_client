@@ -13,7 +13,7 @@ module AuthicClient
 
     def destroy
       session[:authic_user_id] = nil
-      redirect_path = "https://#{AuthicClient::AUTHIC_CLIENT_SUBDOMAIN}.authic.com/authic_sign_out?&return_path=#{URI.escape root_url}"
+      redirect_path = "#{AuthicClient::AUTHIC_CLIENT_FULL_URL}/authic_sign_out?&return_path=#{URI.escape root_url}"
       redirect_to redirect_path
     end
   end

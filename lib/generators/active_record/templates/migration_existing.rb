@@ -15,6 +15,12 @@ class AddAuthicTo<%= table_name.camelize %> < ActiveRecord::Migration
       t.string :groups unless t.column_exists?(:groups) 
       t.string :roles unless t.column_exists?(:roles) 
       
+      t.string :middle_name unless t.column_exists?(:middle_name) 
+      t.string :gender unless t.column_exists?(:gender) 
+      t.string :timezone unless t.column_exists?(:timezone) 
+      t.string :country unless t.column_exists?(:country) 
+      t.string :address unless t.column_exists?(:address) 
+      
       t.index :email, :unique => true unless t.index_exists?(:email, :unique => true)
       t.index :provider unless t.index_exists?(:provider)
       t.index :uid unless t.index_exists?(:uid)

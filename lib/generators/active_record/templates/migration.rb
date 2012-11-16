@@ -15,6 +15,11 @@ class AuthicCreate<%= table_name.camelize %> < ActiveRecord::Migration
       t.string :groups
       t.string :roles
       
+      t.string :middle_name
+      t.string :gender
+      t.string :timezone
+      t.string :country
+      t.string :address
 
 <% attributes.each do |attribute| -%>
       t.<%= attribute.type %> :<%= attribute.name %>

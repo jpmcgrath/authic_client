@@ -16,10 +16,15 @@ module AuthicUserMixin
       user.email = auth.info.email
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
+      user.middle_name = auth.info.middle_name
       user.full_name = auth.info.full_name
       user.mobile = auth.info.mobile
       user.phone = auth.info.phone
       user.birth_date = auth.info.birth_date
+      user.gender = auth.info.gender
+      user.timezone = auth.info.timezone
+      user.country = auth.info.country
+      user.address = auth.info.address
       user.groups = (auth.info.groups.join(",") if auth.info.groups)
       user.roles = (auth.info.roles.join(",")  if auth.info.roles)
       user.authic_data = (auth.extra.raw_info.to_json.to_s if auth.extra.raw_info)
