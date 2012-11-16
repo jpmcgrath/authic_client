@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    authic_client (0.0.6)
+    authic_client (0.0.7)
       omniauth-authic
       rails (~> 3.2.5)
 
