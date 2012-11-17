@@ -4,7 +4,7 @@ class AddAuthicTo<%= table_name.camelize %> < ActiveRecord::Migration
       t.string :email, :null => false, :default => "" unless t.column_exists?(:email)
       t.string :provider unless t.column_exists?(:provider)
       t.string :uid  unless t.column_exists?(:uid)
-      t.string :authic_data  unless t.column_exists?(:authic_data) 
+      t.text :authic_data  unless t.column_exists?(:authic_data) 
       
       t.string :first_name unless t.column_exists?(:first_name) 
       t.string :last_name unless t.column_exists?(:last_name) 

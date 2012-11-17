@@ -4,7 +4,7 @@ class AuthicCreate<%= table_name.camelize %> < ActiveRecord::Migration
       t.string :email, :null => false, :default => "" 
       t.string :provider 
       t.string :uid  
-      t.string :authic_data  
+      t.text :authic_data  
       
       t.string :first_name
       t.string :last_name
