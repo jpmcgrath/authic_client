@@ -1,11 +1,26 @@
 = AuthicClient
 
-add this gem to your Gemfile
+-add this gem to your Gemfile
 
 gem "authic_client"
 
-run bundle install
+bundle install
+
+
+- Run the authic_client generators
 
 rails g authic:install
 
 rails g active_record:authic User
+
+- Run the authic_client migrations
+
+rake db:migrate
+
+- Edit /config/initializers/authic.rb and add your Authic details
+
+Use the helpers:
+
+signin_path
+signup_path
+signout_path
