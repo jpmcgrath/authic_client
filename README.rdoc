@@ -83,17 +83,13 @@ AUTHIC_CLIENT_SUBDOMAIN :: '< your authic subdomain >'
 ==Helpful Helpers
 
 The Authic Client gem provides the following handy helper methods which are available in both your controllers and views:
-  current_user: Returns the current user logged into your app via Authic
 
-  login_required: Returns true if there is currently a user logged into your app, and false if not
-
-  user_account_path: This will give you the URL to the hosted user account screen in Authic. You would use it on your "edit my account" link/button
-
-  signin_path: This path will initiate sign in with Authic. You would use it on your "login" or "signin" links/buttons
-  
-  signup_path: This path will initiate sign up with Authic. You would use it on your "signup" links/buttons
-  
-  signout_path: Redirecting to this path will log the current user out of your app as well as Authic. You would use it on your "sign out" links/buttons
+current_user :: Returns the current user logged into your app via Authic
+login_required :: Returns true if there is currently a user logged into your app, and false if not
+user_account_path :: This will give you the URL to the hosted user account screen in Authic. You would use it on your "edit my account" link/button
+signin_path :: This path will initiate sign in with Authic. You would use it on your "login" or "signin" links/buttons
+signup_path :: This path will initiate sign up with Authic. You would use it on your "signup" links/buttons
+signout_path :: Redirecting to this path will log the current user out of your app as well as Authic. You would use it on your "sign out" links/buttons
 
 == About Authic
 
