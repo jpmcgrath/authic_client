@@ -1,26 +1,83 @@
-= AuthicClient
+= Authic Client Gem
 
--add this gem to your Gemfile
-
-gem "authic_client"
-
-bundle install
+The Authic Client Gem is the quickest and easiest way to integrate your Rails 3 application with the swell {Authic cloud authentication service}[https://www.authic.com]. This Gem will have your Application using Authic to authenticate and manage your application's users in about the time it takes to read this document (5-10 min - no joke!) letting you concentrate on you application's unique value proposition and not on the mundane business of password reset forms.
 
 
-- Run the authic_client generators
+== Installation
 
-rails g authic:install
+In your Rails 3 applications Gemfile add:
 
-rails g active_record:authic User
+  gem "authic_client"
 
-- Run the authic_client migrations
+Run bundle install from the command line:
 
-rake db:migrate
+  bundle install
 
-- Edit /config/initializers/authic.rb and add your Authic details
+=== Generators
 
-Use the helpers:
+The authic_client gem comes with two generators to make setup a snap. After the gem in installed you can run the authic_client generators to generate configuration, database migration and model files.
 
-signin_path
-signup_path
-signout_path
+To generate the initializer file +config/initializers/authic.rb+ run the following from the command line:
+
+  rails g authic:install
+
+To generate the database migration and model files run the following command from the command line:
+
+  rails g active_record:authic User
+
+*NOTE:* if the +User+ model already exists the generator will insert the appropriate attr_accessor calls at the top of your User model definition file (+app/models/user.rb+) and the migration is smart enough to add columns to an existing model if they don't already exist.
+
+=== Database Migration
+
+To add the required fields to the your users table, run a database migration using the following command:
+
+  rake db:migrate
+
+This will create/update the application's +User+ model to include the following fields.
+
+  t.string :email # the email address of the user
+  t.string :provider # always 'authic' - to be deprecated soon
+  t.string :uid # A unique identifier for the user assigned by Authic
+  t.text :authic_data # a JSON encoded varibles related to the user, e.g the user's facebook id
+  t.string :first_name # The first name of the user
+  t.string :last_name # The last name of the user
+  t.string :full_name # the combined first and last name of the user
+  t.string :mobile # the mobile (cell) phone number of the user
+  t.string :phone # the landline phone number of the user
+  t.date :birth_date # the birth date of the user
+  t.text :groups # which groups the user belongs to (future road map)
+  t.text :roles # which roles the user belongs to (future road map)
+  t.string :middle_name # the middle name of the user
+  t.string :gender # the gender of the user
+  t.string :timezone # the timezone in which the user is located
+  t.string :country # the country in which the user is located
+  t.text :address # the address in which the user is located
+
+== Configuration
+
+- Edit +/config/initializers/authic.rb+ and add your Authic details
+
+==Helpful Helpers
+
+The Authic Client gem provides the following handy helper methods to make it easy to embed sign in, sign up and sign out links in your application's views.
+
+  signin_path
+  signup_path
+  signout_path
+
+We will leave it as an exercise for you to work out which helper does what :-)
+
+== About Authic
+
+{Authic}[https://www.authic.com] is a secure, brandable cloud authentication service that integrates into your web app in seconds leaving you to concentrate on your core business functionality.
+
+== License
+(The MIT License)
+
+Copyright (c) 2012 Authic.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
