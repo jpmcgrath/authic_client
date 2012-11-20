@@ -17,7 +17,7 @@ Run bundle install from the command line:
 
 The authic_client gem comes with two generators to make setup a snap. After the gem in installed you can run the authic_client generators to generate configuration, database migration and model files.
 
-To generate the initializer file +config/initializers/authic.rb+ run the following from the command line:
+To generate the initializer files +config/initializers/authic.rb+ and +config/initializers/omniauth.rb+ run the following from the command line:
 
   rails g authic:install
 
