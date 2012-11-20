@@ -4,7 +4,7 @@ class AuthicCreate<%= table_name.camelize %> < ActiveRecord::Migration
       t.string :email, :null => false, :default => "" # the email address of the user
       t.string :provider # always 'authic' - to be deprecated soon
       t.string :uid, :null => false # A unique identifier for the user assigned by Authic
-      t.text :authic_data # The data field contains a JSON encoded varibles related to the user. An example of this data would be the facebook id of a user.
+      t.text :authic_data # a JSON encoded varibles related to the user, e.g the user's facebook id
       
       t.string :first_name # The first name of the user
       t.string :last_name # The last name of the user
