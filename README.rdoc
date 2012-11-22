@@ -91,6 +91,10 @@ signin_path :: This path will initiate sign in with Authic. You would use it on 
 signup_path :: This path will initiate sign up with Authic. You would use it on your "signup" links/buttons
 signout_path :: Redirecting to this path will log the current user out of your app as well as Authic. You would use it on your "sign out" links/buttons
 
+==Other Useful Tidbits
+
+session[:authic_return_to_this_url] :: Set this session variable before initiating signin and authic_client will punt your user to this path after the Oauth callback process is complete
+
 == About Authic
 
 {Authic}[https://www.authic.com] is a secure, brandable cloud authentication service that integrates into your web app in seconds leaving you to concentrate on your core business functionality.
