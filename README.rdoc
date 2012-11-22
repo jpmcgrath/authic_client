@@ -93,6 +93,8 @@ signout_path :: Redirecting to this path will log the current user out of your a
 
 ==Other Useful Tidbits
 
+Here are some other bits and pieces that might be useful while having fun using authic_client
+
 session[:authic_return_to_this_url] :: Set this session variable before initiating signin and authic_client will punt your user to this path after the Oauth callback process is complete
 
 == About Authic
