@@ -6,6 +6,7 @@ module Authic
       def copy_initializers
         template "authic.rb", "config/initializers/authic.rb"
         template "omniauth.rb", "config/initializers/omniauth.rb"
+        template "sessions_controller.rb", "app/controllers/authic/sessions_controller.rb"
       end
 
     end
