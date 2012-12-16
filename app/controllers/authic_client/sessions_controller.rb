@@ -1,4 +1,4 @@
-class AuthicClient::SessionsController < ApplicationController
+class AuthicClient::SessionsController < ActionController::Base
   def create
     user = User.find_for_authic_oauth(request.env["omniauth.auth"], current_user)
     if user.persisted?

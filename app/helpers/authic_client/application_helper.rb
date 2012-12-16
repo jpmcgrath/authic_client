@@ -12,6 +12,10 @@ module AuthicClient
     def signup_path
       "/auth/authic?&authic_action=signup"
     end
+    
+    def signin_iframe_path
+      "#{AuthicClient::AUTHIC_CLIENT_FULL_URL}/v1/signin_iframe"
+    end
 
     def user_account_path
       "#{AuthicClient::AUTHIC_CLIENT_FULL_URL}/edit_account"
