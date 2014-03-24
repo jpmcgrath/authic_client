@@ -2,7 +2,7 @@ module AuthicClient
   module ApplicationHelper
     
     def current_user
-      @current_user ||= User.find(session[:authic_user_id]) if session[:authic_user_id]
+      @current_user ||= ::User.find(session[:authic_user_id]) if session[:authic_user_id]
     end
 
     def signin_path
