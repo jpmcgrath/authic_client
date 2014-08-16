@@ -7,6 +7,13 @@ module AuthicClient
       ActiveSupport.on_load(:action_controller) do
         include AuthicClient::ApplicationHelper
       end
-    end    
+    end
+
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => false
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+      g.assets false
+      g.helper false
+    end
   end
 end
