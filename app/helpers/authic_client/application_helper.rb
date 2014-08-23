@@ -1,6 +1,6 @@
 module AuthicClient
   module ApplicationHelper
-    
+
     def current_user
       @current_user ||= ::User.find(session[:authic_user_id]) if session[:authic_user_id]
     end
@@ -12,7 +12,7 @@ module AuthicClient
     def signup_path
       "/auth/authic?&authic_action=signup"
     end
-    
+
     def signin_iframe_path
       "#{AuthicClient::AUTHIC_CLIENT_FULL_URL}/v1/signin_iframe"
     end
