@@ -4,6 +4,7 @@ module AuthicClient
 
     config.to_prepare do
       ApplicationController.helper(AuthicClient::ApplicationHelper)
+      ApplicationHelper.helper(AuthicClient::ApplicationHelper)
     end
   end
 end
