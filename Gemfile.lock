@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    authic_client (0.0.12)
+    authic_client (0.1.1)
       omniauth-authic
-      rails (~> 3.2.5)
+      rails (>= 3.2.5)
 
 GEM
   remote: http://rubygems.org/
