@@ -5,7 +5,7 @@ The Authic Client Gem is the quickest and easiest way to integrate your Rails 3 
 
 == Installation
 
-In your Rails 3 applications Gemfile add:
+In your Rails 4 applications Gemfile add:
 
   gem "authic_client"
 
