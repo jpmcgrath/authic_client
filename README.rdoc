@@ -5,7 +5,7 @@ The Authic Client Gem is the quickest and easiest way to integrate your Rails 3 
 
 == Installation
 
-In your Rails 3 applications Gemfile add:
+In your Rails 3 or Rails 4 applications Gemfile add:
 
   gem "authic_client"
 
@@ -55,14 +55,14 @@ This will create/update the application's +User+ model to include the following 
 
 == Configuration
 
-Edit +/config/initializers/authic.rb+ and add your Authic details. The details include your Authic client key, secret and subdomain. These values can be found on Authic's Client Application details screen. 
+Edit +/config/initializers/authic.rb+ and add your Authic details. The details include your Authic client key, secret and subdomain. These values can be found on Authic's Client Application details screen.
 
 The initializer looks like:
 
   module AuthicClient
     # Authic config
-    AUTHIC_CLIENT_KEY ||= ENV['AUTHIC_CLIENT_KEY'] ||= '< your authic client key >'  
-    AUTHIC_CLIENT_SECRET ||= ENV['AUTHIC_CLIENT_SECRET'] ||= '< your authic client secret >'  
+    AUTHIC_CLIENT_KEY ||= ENV['AUTHIC_CLIENT_KEY'] ||= '< your authic client key >'
+    AUTHIC_CLIENT_SECRET ||= ENV['AUTHIC_CLIENT_SECRET'] ||= '< your authic client secret >'
     AUTHIC_CLIENT_SUBDOMAIN ||= ENV['AUTHIC_CLIENT_SUBDOMAIN'] ||= '< your authic subdomain >'
     AUTHIC_CLIENT_FULL_URL = "https://#{AUTHIC_CLIENT_SUBDOMAIN}.authic.com"
   end
@@ -71,10 +71,10 @@ Just replace the <XXXX> strings between the quotes with the values. There is no 
 
 Alternatively you can leave the file alone and initialize these variables with heroku style environment configuration values:
 
-AUTHIC_CLIENT_KEY :: '< your authic client key >'  
-AUTHIC_CLIENT_SECRET :: '< your authic client secret >'  
+AUTHIC_CLIENT_KEY :: '< your authic client key >'
+AUTHIC_CLIENT_SECRET :: '< your authic client secret >'
 AUTHIC_CLIENT_SUBDOMAIN :: '< your authic subdomain >'
-  
+
 
 *NOTE:* Make sure keep the quotation marks around these values and don't include any '<' or '>'s.
 
