@@ -1,7 +1,7 @@
 module AuthicClient
   module ApplicationHelper
 
-    AUTHIC_CLIENT_FULL_URL = defined?(AuthicClient::AUTHIC_CLIENT_FULL_URL) ? AuthicClient::AUTHIC_CLIENT_FULL_URL : "https://#{AUTHIC_CLIENT_SUBDOMAIN}.authic.com"
+    AUTHIC_CLIENT_FULL_URL = defined?(AuthicClient::FULL_URL) ? AuthicClient::FULL_URL : "https://#{AUTHIC_CLIENT_SUBDOMAIN}.authic.com"
 
     def current_user
       @current_user ||= ::User.find(session[:authic_user_id]) if session[:authic_user_id]

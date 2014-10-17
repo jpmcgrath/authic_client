@@ -64,7 +64,6 @@ The initializer looks like:
     AUTHIC_CLIENT_KEY ||= ENV['AUTHIC_CLIENT_KEY'] ||= '< your authic client key >'
     AUTHIC_CLIENT_SECRET ||= ENV['AUTHIC_CLIENT_SECRET'] ||= '< your authic client secret >'
     AUTHIC_CLIENT_SUBDOMAIN ||= ENV['AUTHIC_CLIENT_SUBDOMAIN'] ||= '< your authic subdomain >'
-    AUTHIC_CLIENT_FULL_URL = "https://#{AUTHIC_CLIENT_SUBDOMAIN}.authic.com"
   end
 
 Just replace the <XXXX> strings between the quotes with the values. There is no need to change any other part of this file.
