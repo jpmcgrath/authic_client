@@ -1,6 +1,8 @@
 module AuthicClient
   module ApplicationHelper
-    
+
+    AUTHIC_CLIENT_FULL_URL = defined?(AuthicClient::AUTHIC_CLIENT_FULL_URL) ? AuthicClient::AUTHIC_CLIENT_FULL_URL : "https://#{AUTHIC_CLIENT_SUBDOMAIN}.authic.com"
+
     def current_user
       @current_user ||= ::User.find(session[:authic_user_id]) if session[:authic_user_id]
     end
@@ -12,13 +14,13 @@ module AuthicClient
     def signup_path
       "/auth/authic?&authic_action=signup"
     end
-    
+
     def signin_iframe_path
-      "#{AuthicClient::AUTHIC_CLIENT_FULL_URL}/v1/signin_iframe"
+      "#{AUTHIC_CLIENT_FULL_URL}/v1/signin_iframe"
     end
 
     def user_account_path
-      "#{AuthicClient::AUTHIC_CLIENT_FULL_URL}/edit_account"
+      "#{AUTHIC_CLIENT_FULL_URL}/edit_account"
     end
 
     def login_required
